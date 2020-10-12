@@ -1,0 +1,39 @@
+################################################################################
+#
+# Debian Postfix daemon processes.
+#
+# /etc/postfix/master.cf
+#
+# More info: https://www.librobert.net/book/internet
+#
+################################################################################
+#
+# Copyright (c) 2019 Robert LA LAU < https://www.librobert.net/ >
+#
+# This work is licensed under the Creative Commons Attribution 4.0 International License.
+# To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+# or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+#
+################################################################################
+
+smtp		inet	n	-	n	-	-	smtpd
+
+submission	inet	n	-	n	-	-	smtpd
+  -o syslog_name=postfix/submission
+  -o smtpd_tls_security_level=encrypt
+  -o smtpd_tls_auth_only=yes
+  -o smtpd_reject_unlisted_recipient=no
+  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
+  -o milter_macro_daemon_name=ORIGINATING
+
+dovecot		unix	-	n	n	-	-	pipe
+  flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/dovecot-lda -f ${sender} -a ${original_recipient} -d ${user}
+
+policyd-spf unix	-	n	n	-	0	spawn
+  user=policyd-spf argv=/usr/bin/policyd-spf
+
+
+# [...]
+#
+# Do not delete existing lines from the file
+# if they do not clash with the lines above.
