@@ -29,6 +29,6 @@ No single blueprint exists for an internet server, and an important part of the 
 
 This book can be used by aspiring and beginning system administrators who are working on personal servers, or more experienced system administrators who may know Unix well but need a reference book for the more specialized work that falls outside the daily routine. Basic understanding of Unix and working on the command line is necessary.
 
-**This book will appear with publisher Apress in the beginning 2021.**
+**This book will appear with publisher Apress in the beginning of 2021.**
 
 More info at [librobert.net](https://www.librobert.net/book/internet/index.en).
