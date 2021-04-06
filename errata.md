@@ -10,7 +10,7 @@ Legend:
 
 **Page 363** : *bogofilter-train.sh*.
 
-[No](images/no.png)
+![No](images/no.png)
 <pre>cat | bogofilter ${FLAG} &</pre>
 
 ![Yes](images/yes.png)
