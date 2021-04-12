@@ -8,7 +8,7 @@ Legend:
 
 ---
 
-**Page 332* : Apache Radical configuration.
+**Page 332* : Apache Radicale configuration.
 
 ![No](images/no.png)
 <pre>RequestHeader set X-Remote-User expr=%{REMOTE_USER}</pre>
@@ -21,7 +21,7 @@ RequestHeader set X-Remote-User expr=%{REMOTE_USER}</pre>
 
 ---
 
-**Page 333* : Nginx Radical configuration.
+**Page 333* : Nginx Radicale configuration.
 
 ![No](images/no.png)
 <pre>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</pre>
